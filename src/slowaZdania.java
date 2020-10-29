@@ -36,33 +36,13 @@ public class slowaZdania {
         botMain.SlowaOrzeczenie.add("kocha"); //1
         botMain.SlowaOrzeczenie.add("uwielbia"); //1
         botMain.SlowaOrzeczenie.add("jebie"); //1
-
-
-
-
-//        botMain.SlowaOrzeczenie.add("nienawidzi");
         botMain.SlowaOrzeczenie.add("robi");
-        botMain.SlowaOrzeczenie.add("nie robi");
+
 
 
 
 }
 
-    static public void slowaOrzeczeniePrzeczaceDodaj(){  // wszystkie wyrazy konczace sie na "isz"
-
-//        botMain.SlowaOrzeczeniePrzeczace.add("nie lubi"); //1
-        botMain.SlowaOrzeczeniePrzeczace.add("nie kocha"); //1
-
-
-
-
-//        botMain.SlowaOrzeczenie.add("nienawidzi");
-        botMain.SlowaOrzeczeniePrzeczace.add("robi");
-        botMain.SlowaOrzeczeniePrzeczace.add("nie robi");
-
-
-
-    }
 
 
     static public void pytaniaRozpoczynajaceDodaj(){

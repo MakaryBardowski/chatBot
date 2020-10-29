@@ -8,7 +8,6 @@ public class botMain {
     static HashSet<String> SlowaPowitalne = new HashSet<>();
     static HashSet<String> SlowaPodmiot = new HashSet<>();
     static HashSet<String> SlowaOrzeczenie = new HashSet<>();
-    static HashSet<String> SlowaOrzeczeniePrzeczace = new HashSet<>();
     static ArrayList<String> PytaniaRozpoczynajace = new ArrayList<>();
 
 
@@ -21,20 +20,16 @@ public class botMain {
         slowaZdania.slowaPodmiotDodaj();
         slowaZdania.slowaOrzeczenieDodaj();
         slowaZdania.pytaniaRozpoczynajaceDodaj();
-        slowaZdania.slowaOrzeczeniePrzeczaceDodaj();
+
 
         System.out.println("bot: hej");
-//        System.out.println("bot: Takie slowa powitalne znam:" + SlowaPowitalne);
 
-        mainLoop();
-        mainLoop();
-
-
-
+        while(true){
+            mainLoop();
+        }
 
 
     }
-
 
 
     public static String userInput() {
@@ -43,25 +38,18 @@ public class botMain {
 
     }
 
-    public static void mainLoop(){
+    public static void mainLoop() {
+
+
         userInput();
 
-        //test
-checkIfContains.checkIfContainsNegation();
-// test
+        checkIfContains.checkIfContainsNegation();
 
-
-            checkIfContains.checkIfContainsOrzeczeniePrzeczace(wpisUzytkownika);
-            if(checkIfContains.ContainsOrzeczeniePrzeczace){
-                checkIfContains.checkIfContainsPodmiot(wpisUzytkownika);
-            } else {
-                checkIfContains.checkIfContainsOrzeczenie(wpisUzytkownika);
-                checkIfContains.checkIfContainsPodmiot(wpisUzytkownika);
-            }
+        checkIfContains.checkIfContainsOrzeczenie(wpisUzytkownika);
+        checkIfContains.checkIfContainsPodmiot(wpisUzytkownika);
 
 
     }
-
 
 
 }
