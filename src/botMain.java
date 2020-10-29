@@ -46,6 +46,11 @@ public class botMain {
     public static void mainLoop(){
         userInput();
 
+        //test
+checkIfContains.checkIfContainsNegation();
+// test
+
+
             checkIfContains.checkIfContainsOrzeczeniePrzeczace(wpisUzytkownika);
             if(checkIfContains.ContainsOrzeczeniePrzeczace){
                 checkIfContains.checkIfContainsPodmiot(wpisUzytkownika);

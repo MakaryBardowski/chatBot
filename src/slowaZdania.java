@@ -50,7 +50,7 @@ public class slowaZdania {
 
     static public void slowaOrzeczeniePrzeczaceDodaj(){  // wszystkie wyrazy konczace sie na "isz"
 
-        botMain.SlowaOrzeczeniePrzeczace.add("nie lubi"); //1
+//        botMain.SlowaOrzeczeniePrzeczace.add("nie lubi"); //1
         botMain.SlowaOrzeczeniePrzeczace.add("nie kocha"); //1
 
 
@@ -68,6 +68,9 @@ public class slowaZdania {
     static public void pytaniaRozpoczynajaceDodaj(){
         botMain.PytaniaRozpoczynajace.add("A dlaczego");
         botMain.PytaniaRozpoczynajace.add("Czemu");
+        botMain.PytaniaRozpoczynajace.add("A w sumie to czemu");
+
+
 
 //        botMain.PytaniaRozpoczynajace.add("Z jakiej racji");
 //        botMain.PytaniaRozpoczynajace.add("Po jakie licho");
