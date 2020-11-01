@@ -5,27 +5,38 @@ import java.util.Scanner;
 
 public class botMain {
     static Scanner skaner = new Scanner(System.in);
-    static HashSet<String> SlowaPowitalne = new HashSet<>();
-    static HashSet<String> SlowaPodmiot = new HashSet<>();
-    static HashSet<String> SlowaOrzeczenie = new HashSet<>();
-    static ArrayList<String> PytaniaRozpoczynajace = new ArrayList<>();
+    static HashSet<String> GreetingWords = new HashSet<>();
+    static HashSet<String> SubjectWords = new HashSet<>();
+    static HashSet<String> PredicateWords = new HashSet<>();
+
+    static ArrayList<String> QuestionWords = new ArrayList<>();
+
+    static ArrayList<String> PreviousTopics = new ArrayList<>(); // arraylist, so i can randomise topics using index, moreover the bot can refer to last topic discussed
 
 
-    //    static ArrayList<String>noweSlowa = new ArrayList<String>();
-    static String[] noweSlowa;
-    static String wpisUzytkownika;
+    static String userInput;
 
     public static void main(String[] args) {
-        slowaZdania.slowaPowitanieDodaj();
-        slowaZdania.slowaPodmiotDodaj();
-        slowaZdania.slowaOrzeczenieDodaj();
-        slowaZdania.pytaniaRozpoczynajaceDodaj();
+        AddWords.AddGreetingWords();
+        AddWords.AddSubjectWords();
+        AddWords.AddPredicateWords();
+        AddWords.AddQuestions();
 
 
         System.out.println("bot: hej");
 
         while(true){
             mainLoop();
+
+            //just to check if it works
+            if(PreviousTopics.size() != 0)
+            System.out.println("Ostatni temat: " + PreviousTopics.get(PreviousTopics.size()-1)); // gets last topic from PreviousTopics
+
+            //
+
+
+            System.out.println(PreviousTopics);
+
         }
 
 
@@ -33,20 +44,25 @@ public class botMain {
 
 
     public static String userInput() {
-        wpisUzytkownika = skaner.nextLine();
-        return wpisUzytkownika;
+        userInput = skaner.nextLine();
+        return userInput;
 
     }
 
     public static void mainLoop() {
-
-
         userInput();
 
-        checkIfContains.checkIfContainsNegation();
+        SentenceCheckAndMake.CheckIfContainsNegation();
 
-        checkIfContains.checkIfContainsOrzeczenie(wpisUzytkownika);
-        checkIfContains.checkIfContainsPodmiot(wpisUzytkownika);
+        SentenceCheckAndMake.CheckIfContainSubject(userInput);
+        if(SentenceCheckAndMake.ContainsPodmiot){   // when the person the bot is talking to moves onto some other subject
+            SentenceCheckAndMake.PrintOrzeczenie(userInput);
+            SentenceCheckAndMake.PrintPodmiot(userInput);
+        } else if(!SentenceCheckAndMake.ContainsPodmiot && !SentenceCheckAndMake.ContainsNegation){  // when the person the bot is talking to says something about last topic they discussed
+
+        } else if(!SentenceCheckAndMake.ContainsPodmiot && SentenceCheckAndMake.ContainsNegation) { //when the person the bot is talking to says something about last topic they discussed but with negation
+
+        }
 
 
     }
